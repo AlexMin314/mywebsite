@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" type="text/css" href="css/style2.css" />
+  	<link rel="stylesheet" type="text/css" href="css/grid.css" />
+    <link rel="stylesheet" href="./css/style.css">
+  	<script src="js/modernizr-custom.js"></script>
+  </head>
+
+  <body class="demo-2">
+    <div id="large-header" class="large-header">
+      <div class="content">
+        <div class="portfolioTitle">
+          Portfolio
+        </div>
+        <div class="portfolioExit">
+          <a class="fa fa-times fa-2x" href="./index.html" id="exit" aria-hidden="true"></a>
+        </div>
+  			<div class="grid">
+  				<div class="grid__item" data-size="1280x857">
+            <div>
+              <a href="img/original/1.png" class="img-wrap"></a>
+              <img src="img/thumbs/1.png" alt="img06" />
+              <div class="subtitleItem">
+                project 1: </br>Every 30 Secs.
+              </div>
+              <div class="summaryItem">
+                Singleplayer game with vanilla Javascript.
+              </div>
+            </div>
+						<div class="description description--grid">
+							<h3 class="descriptionSubtitle">Every 30 Secs - SinglePlayer</h3>
+							<p class="descriptionSummary">Dodge dots, Capture stars!</p>
+							<p>JS, HTML, CSS</p>
+							<div class="details">
+								<ul>
+									<li><a class="fa fa-external-link fa-2x desIcon" href="https://alexmin314.github.io/game-every-30-secs/"></a></li>
+									<li><a class="fa fa-github fa-2x desIcon" href="https://github.com/AlexMin314/game-every-30-secs"></a></li>
+								</ul>
+							</div>
+						</div>
+  				</div>
+  				<div class="grid__item" data-size="1280x857">
+            <div>
+              <a href="img/original/1.png" class="img-wrap"></a>
+              <img src="img/thumbs/1.png" alt="img06" />
+              <div class="subtitleItem">
+                project 2: </br>Multiplayer Game.
+              </div>
+              <div class="summaryItem">
+                Multiplayer version of Every 30 Secs with real-time chat.
+              </div>
+            </div>
+						<div class="description description--grid">
+							<h3 class="descriptionSubtitle">Every 30 Secs - SinglePlayer</h3>
+							<p class="descriptionSummary">Dodge dots, Capture stars!</p>
+							<p>JS, HTML, CSS</p>
+							<div class="details">
+								<ul>
+									<li><a class="fa fa-external-link fa-2x desIcon" href="https://alexmin314.github.io/game-every-30-secs/"></a></li>
+									<li><a class="fa fa-github fa-2x desIcon" href="https://github.com/AlexMin314/game-every-30-secs"></a></li>
+								</ul>
+							</div>
+						</div>
+  				</div>
+  				<div class="grid__item" data-size="1280x857">
+            <div>
+              <a href="img/original/1.png" class="img-wrap"></a>
+              <img src="img/thumbs/1.png" alt="img06" />
+              <div class="subtitleItem">
+                project 3: </br>Video Chat
+              </div>
+              <div class="summaryItem">
+                teaTime: Real-time random video chat by webRTC and Peers.
+              </div>
+            </div>
+						<div class="description description--grid">
+							<h3 class="descriptionSubtitle">Every 30 Secs - SinglePlayer</h3>
+							<p class="descriptionSummary">Dodge dots, Capture stars!</p>
+							<p>JS, HTML, CSS</p>
+							<div class="details">
+								<ul>
+									<li><a class="fa fa-external-link fa-2x desIcon" href="https://alexmin314.github.io/game-every-30-secs/"></a></li>
+									<li><a class="fa fa-github fa-2x desIcon" href="https://github.com/AlexMin314/game-every-30-secs"></a></li>
+								</ul>
+							</div>
+						</div>
+  				</div>
+  				<div class="grid__item" data-size="1280x857">
+            <div>
+              <a href="img/original/1.png" class="img-wrap"></a>
+              <img src="img/thumbs/1.png" alt="img06" />
+              <div class="subtitleItem">
+                project 4: </br>MindTap
+              </div>
+              <div class="summaryItem">
+                Pictionary-like real-time drawing/guessing multiplayer game.
+              </div>
+            </div>
+						<div class="description description--grid">
+							<h3 class="descriptionSubtitle">Every 30 Secs - SinglePlayer</h3>
+							<p class="descriptionSummary">Dodge dots, Capture stars!</p>
+							<p>JS, HTML, CSS</p>
+							<div class="details">
+								<ul>
+									<li><a class="fa fa-external-link fa-2x desIcon" href="https://alexmin314.github.io/game-every-30-secs/"></a></li>
+									<li><a class="fa fa-github fa-2x desIcon" href="https://github.com/AlexMin314/game-every-30-secs"></a></li>
+								</ul>
+							</div>
+						</div>
+  				</div>
+  			</div>
+  			<!-- /grid -->
+  			<div class="preview">
+  				<button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
+  				<div class="description description--preview"></div>
+  			</div>
+  			<!-- /preview -->
+  		</div>
+    </div>
+
+
+  <script src="./js/imagesloaded.pkgd.min.js"></script>
+	<script src="./js/masonry.pkgd.min.js"></script>
+	<script src="./js/classie.js"></script>
+	<script src="./js/grid.js"></script>
+	<script>
+		(function() {
+			var support = { transitions: Modernizr.csstransitions },
+				// transition end event name
+				transEndEventNames = { 'WebkitTransition': 'webkitTransitionEnd', 'MozTransition': 'transitionend', 'OTransition': 'oTransitionEnd', 'msTransition': 'MSTransitionEnd', 'transition': 'transitionend' },
+				transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+				onEndTransition = function( el, callback ) {
+					var onEndCallbackFn = function( ev ) {
+						if( support.transitions ) {
+							if( ev.target != this ) return;
+							this.removeEventListener( transEndEventName, onEndCallbackFn );
+						}
+						if( callback && typeof callback === 'function' ) { callback.call(this); }
+					};
+					if( support.transitions ) {
+						el.addEventListener( transEndEventName, onEndCallbackFn );
+					}
+					else {
+						onEndCallbackFn();
+					}
+				};
+
+			new GridFx(document.querySelector('.grid'), {
+				imgPosition : {
+					x : -0.5,
+					y : 1
+				},
+				onOpenItem : function(instance, item) {
+					instance.items.forEach(function(el) {
+						if(item != el) {
+							var delay = Math.floor(Math.random() * 50);
+							el.style.WebkitTransition = 'opacity .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1), -webkit-transform .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1)';
+							el.style.transition = 'opacity .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1), transform .5s ' + delay + 'ms cubic-bezier(.7,0,.3,1)';
+							el.style.WebkitTransform = 'scale3d(0.1,0.1,1)';
+							el.style.transform = 'scale3d(0.1,0.1,1)';
+							el.style.opacity = 0;
+						}
+					});
+				},
+				onCloseItem : function(instance, item) {
+					instance.items.forEach(function(el) {
+						if(item != el) {
+							el.style.WebkitTransition = 'opacity .4s, -webkit-transform .4s';
+							el.style.transition = 'opacity .4s, transform .4s';
+							el.style.WebkitTransform = 'scale3d(1,1,1)';
+							el.style.transform = 'scale3d(1,1,1)';
+							el.style.opacity = 1;
+
+							onEndTransition(el, function() {
+								el.style.transition = 'none';
+								el.style.WebkitTransform = 'none';
+							});
+						}
+					});
+				}
+			});
+		})();
+	</script>
+  </body>
+</html>
