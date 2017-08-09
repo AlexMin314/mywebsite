@@ -69,12 +69,12 @@ body #cdawrap .carbon-text {
 }
 @media screen and (max-height: 50em) {
 	.content {
-		padding-top: 50px;
+		padding-top: 30px;
 	}
 }
 @media screen and (max-height: 40em) {
 	.content {
 		max-width: 1280px;
-		padding-top: 50px;
+		padding-top: 30px;
 	}
 }

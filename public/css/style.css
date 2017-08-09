@@ -63,7 +63,11 @@ a {
 .mainWrapper {
 	text-align: center;
 }
-
+.grid {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-name: zoomIn;
+}
 .fadeInUP {
 	animation-duration: 1s;
 	animation-fill-mode: both;
@@ -78,6 +82,16 @@ a {
   to {
     opacity: 1;
 		transform: none;
+  }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
   }
 }
 .mainTitle {
