@@ -16,10 +16,8 @@
 html, body {
   margin: 0;
   padding: 0;
-}
-
-html, body {
 	height: 100%;
+	width: 100%;
 }
 
 body {
@@ -35,6 +33,17 @@ a {
 	text-decoration: none;
 }
 
+p {
+	margin: 5px 0;
+}
+
+#canvas {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 /* Header */
 .large-header {
 	position: relative;
@@ -50,6 +59,7 @@ a {
 #large-header {
 	background-image: url('../img/bg.jpg');
 }
+
 .mainWrapper {
 	position: absolute;
 	width: 100%;
@@ -81,7 +91,7 @@ a {
 
   to {
     opacity: 1;
-		transform: none;
+
   }
 }
 @keyframes zoomIn {
@@ -112,6 +122,9 @@ a {
 }
 .fa {
 	color: white;
+}
+.fa-times {
+	color: grey;
 }
 .iconWrapper {
 	margin: 40px;
@@ -156,9 +169,10 @@ a {
 	margin-top: 15px;
 }
 #contact {
-	margin-top: 5px;
+	margin-top: 10px;
 }
 #email, #contact {
+	display: block;
 	letter-spacing: 0.05em;
 	font-weight: 200;
 	color: white;
@@ -166,6 +180,9 @@ a {
 	-webkit-animation-delay: 1s;
 	-ms-animation-delay: 1s;
 	animation-delay: 1s;
+}
+#email:hover, #contact:hover {
+	font-weight: 400;
 }
 
 @media only screen and (max-width : 768px) {

@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2015, Codrops
  * http://www.codrops.com
  */
@@ -35,7 +35,7 @@
 	/**
 	 * some helper functions
 	 */
-	
+
 	function throttle(fn, delay) {
 		var allowSample = true;
 
@@ -57,7 +57,7 @@
 	}
 
 	function extend( a, b ) {
-		for( var key in b ) { 
+		for( var key in b ) {
 			if( b.hasOwnProperty( key ) ) {
 				a[key] = b[key];
 			}
@@ -72,7 +72,7 @@
 		this.gridEl = el;
 		this.options = extend( {}, this.options );
 		extend( this.options, options );
-		
+
 		this.items = [].slice.call(this.gridEl.querySelectorAll('.grid__item'));
 		this.previewEl = nextSibling(this.gridEl);
 		this.isExpanded = false;
@@ -132,10 +132,10 @@
 			var touchend = function(ev) {
 					ev.preventDefault();
 					self._openItem(ev, item);
-					item.removeEventListener('touchend', touchend);	
+					item.removeEventListener('touchend', touchend);
 				},
 				touchmove = function(ev) {
-					item.removeEventListener('touchend', touchend);	
+					item.removeEventListener('touchend', touchend);
 				},
 				manageTouch = function() {
 					item.addEventListener('touchend', touchend);
@@ -155,13 +155,26 @@
 
 		// close expanded image
 		this.closeCtrl.addEventListener('click', function() {
-			self._closeItem(); 
+			self._closeItem();
 		});
 
 		window.addEventListener('resize', throttle(function(ev) {
 			// callback
 			self.options.onResize(self);
 		}, 10));
+		window.addEventListener('orientationchange', function(ev) {
+			var element = document.getElementById('original');
+			// callback
+			setTimeout(() => {
+				if (window.innerWidth > 420) {
+					element.style.padding = '0';
+				}
+				if (window.innerWidth < 420) {
+					element.style.maxWidth = window.innerWidth + 'px';
+					element.style.paddingBottom = '125%';
+				}
+			}, 100)
+		});
 	}
 
 	/**
@@ -181,7 +194,7 @@
 
 		// set the src of the original image element (large image)
 		this._setOriginal(item.querySelector('a').getAttribute('href'));
-		
+
 		// callback
 		this.options.onOpenItem(this, item);
 
@@ -215,7 +228,7 @@
 		}
 
 		var self = this;
-		setTimeout(function() { 
+		setTimeout(function() {
 			// controls the elements inside the expanded view
 			classie.add(self.previewEl, 'preview--open');
 			// callback
@@ -239,8 +252,8 @@
 
 					self.isAnimating = false;
 				});
-				
-			});	
+
+			});
 		});
 	};
 
@@ -251,9 +264,16 @@
 		if( !src ) {
 			this.originalImg = document.createElement('img');
 			this.originalImg.className = 'original';
+			this.originalImg.id = 'original';
 			this.originalImg.style.opacity = 0;
 			this.originalImg.style.maxWidth = 'calc(' + parseInt(Math.abs(this.options.imgPosition.x)*100) + 'vw - ' + this.options.pagemargin + 'px)';
-			this.originalImg.style.maxHeight = 'calc(' + parseInt(Math.abs(this.options.imgPosition.y)*100) + 'vh - ' + this.options.pagemargin + 'px)';
+			console.log(window.innerWidth)
+			if (window.innerWidth < 420 && window.innerHeight < 740 && window.innerHeight > 320) {
+				this.originalImg.style.maxWidth = window.innerWidth + 'px';
+				this.originalImg.style.paddingBottom = '125%';
+				this.originalImg.style.position = 'absolute';
+				this.originalImg.style.left = '0';
+			}
 			// need it because of firefox
 			this.originalImg.style.WebkitTransform = 'translate3d(0,0,0) scale3d(1,1,1)';
 			this.originalImg.style.transform = 'translate3d(0,0,0) scale3d(1,1,1)';
@@ -283,7 +303,7 @@
 			this.cloneImg.style.top = settings.top  + 'px';
 			this.cloneImg.style.left = settings.left  + 'px';
 		}
-
+		console.log(settings)
 		this.cloneImg.setAttribute('src', src);
 	};
 
@@ -303,7 +323,7 @@
 
 		classie.remove(this.previewEl, 'preview--open');
 		classie.remove(this.previewEl, 'preview--image-loaded');
-		
+
 		// callback
 		this.options.onCloseItem(this, gridItem);
 
@@ -317,8 +337,8 @@
 			z = gridImg.offsetWidth/this.originalImg.offsetWidth;
 
 		this.originalImg.style.WebkitTransform = 'translate3d(' + dx + 'px, ' + dy + 'px, 0) scale3d(' + z + ', ' + z + ', 1)';
-		this.originalImg.style.transform = 'translate3d(' + dx + 'px, ' + dy + 'px, 0) scale3d(' + z + ', ' + z + ', 1)';	
-		
+		this.originalImg.style.transform = 'translate3d(' + dx + 'px, ' + dy + 'px, 0) scale3d(' + z + ', ' + z + ', 1)';
+
 		// once that's done..
 		onEndTransition(this.originalImg, function() {
 			// clear description

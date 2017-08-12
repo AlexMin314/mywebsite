@@ -1,6 +1,7 @@
 .grid {
 	position: relative;
 	margin: 0 auto;
+	font-weight: 200;
 }
 
 .grid::after {
@@ -43,6 +44,7 @@
 
 .subtitleItem {
 	color: #fbca67;
+	font-weight: 400;
 }
 
 .summaryItem {
@@ -157,7 +159,8 @@
 	left: 100%;
 	top: 0;
 	height: 100%;
-	padding: 0 1em;
+	padding-left: 1.6em;
+	padding-right: 1em;
 	display: -ms-flex;
 	display: -webkit-flex;
 	display: flex;
@@ -368,8 +371,6 @@
 .descriptionSubtitle {
 	color: rgb(255, 64, 129);
 }
-.descriptionSummary {
-}
 .desIcon {
 	padding: 3px;
 	margin: 0 5px;
@@ -410,16 +411,36 @@
 	color: #60daaa;
 }
 .disclaimer {
-	font-size: 8px;
-	font-weight: 200;
+	font-size: 3px;
+	font-weight: 100;
 	color: grey;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 40em) and (min-height: 400px) {
 	.description--preview h3 {
 		font-size: 0.5em;
 	}
 	.description--preview p,
 	.details {
 		font-size: 0.5em;
+	}
+	.description--preview {
+		position: absolute;
+		width: 200%;
+		left: 0;
+		top: 60%;
+		display: block;
+		padding: 0 20px;
+	}
+}
+@media screen and (max-height: 420px) {
+	.description--preview h3 {
+		font-size: 0.5em;
+	}
+	.description--preview p,
+	.details {
+		font-size: 0.5em;
+	}
+	.description--preview {
+
 	}
 }

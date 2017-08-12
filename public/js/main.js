@@ -8,22 +8,23 @@
     addListeners();
 
     function initHeader() {
-        width = window.clientX;
-        height = window.clientY;
-        target = {x: width/2, y: height/2};
 
-        largeHeader = document.getElementById('large-header');
-        largeHeader.style.height = height+'px';
-
-        canvas = document.getElementById('demo-canvas');
+        canvas = document.getElementById('canvas');
+        width = canvas.clientWidth;
+        height = canvas.clientHeight;
         canvas.width = width;
         canvas.height = height;
         ctx = canvas.getContext('2d');
 
+        target = {x: width/2, y: height/2};
+
+
+
+
         // create points
         points = [];
-        for(var x = 0; x < width; x = x + width/10) {
-            for(var y = 0; y < height; y = y + height/10) {
+        for(var x = 0; x < width; x = x + width/12) {
+            for(var y = 0; y < height; y = y + height/12) {
                 var px = x + Math.random()*width/20;
                 var py = y + Math.random()*height/20;
                 var p = {x: px, originX: px, y: py, originY: py };
@@ -97,11 +98,10 @@
     }
 
     function resize() {
-        width = window.clientX;
-        height = window.clientY;
-        largeHeader.style.height = height+'px';
-        canvas.width = width;
-        canvas.height = height;
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      canvas.width = width;
+      canvas.height = height;
     }
 
     // animation
@@ -181,12 +181,5 @@
     function getDistance(p1, p2) {
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
-
-    // contact
-    var urlAdress = window.location.href;
-    if (urlAdress.includes('index') || !urlAdress.includes('portfolio')) {
-      document.getElementById('email').innerHTML = 'alex.min.sg@gmail.com';
-      document.getElementById('contact').innerHTML = '+65-8615-7338';
-  }
 
 })();
