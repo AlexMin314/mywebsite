@@ -267,7 +267,6 @@
 			this.originalImg.id = 'original';
 			this.originalImg.style.opacity = 0;
 			this.originalImg.style.maxWidth = 'calc(' + parseInt(Math.abs(this.options.imgPosition.x)*100) + 'vw - ' + this.options.pagemargin + 'px)';
-			console.log(window.innerWidth)
 			if (window.innerWidth < 420 && window.innerHeight < 740 && window.innerHeight > 320) {
 				this.originalImg.style.maxWidth = window.innerWidth + 'px';
 				this.originalImg.style.paddingBottom = '125%';
@@ -303,7 +302,6 @@
 			this.cloneImg.style.top = settings.top  + 'px';
 			this.cloneImg.style.left = settings.left  + 'px';
 		}
-		console.log(settings)
 		this.cloneImg.setAttribute('src', src);
 	};
 
