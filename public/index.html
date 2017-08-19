@@ -23,10 +23,10 @@
            href="./portfolio.html"
            aria-hidden="true"></a>
         <a class="fa fa-linkedin fa-2x icon icon2 fadeInUP"
-           href="https://www.linkedin.com/in/alex-min-a22729111/"
+           href="javascript:openLink('https://www.linkedin.com/in/alex-min-a22729111/')"
            aria-hidden="true"></a>
         <a class="fa fa-github fa-2x icon icon3 fadeInUP"
-           href="https://github.com/AlexMin314"
+           href="javascript:openLink('https://github.com/AlexMin314')"
            aria-hidden="true"></a>
       </div>
       <a id="email" class="fadeInUP" href="mailto:alex.min.sg@gmail.com">
@@ -40,6 +40,12 @@
     </div>
   </div>
 
+  <script>
+    var openLink = function(url) {
+      var w = window.open(url, '_blank');
+      w.opener = null;
+    }
+  </script>
 
   <script type="text/javascript" src="./js/TimelineLite.min.js"></script>
   <script type="text/javascript" src="./js/rAF.js"></script>
